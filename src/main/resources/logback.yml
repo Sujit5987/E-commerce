@@ -1,0 +1,24 @@
+# This YAML file is provided for documentation / tooling convenience. Spring Boot's Logback support
+# prefers XML configuration (e.g. logback-spring.xml). If you want to use YAML to describe
+# logging, you'll need to translate it to Logback XML or use a logging facade that understands YAML.
+
+appName: ${spring.application.name:your-app}
+log:
+  home: ${LOG_HOME:./logs}
+  file: ${log.home}/${appName}.log
+  pattern: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+  level:
+    root: INFO
+    app: DEBUG
+
+appenders:
+  - console:
+      pattern: "${log.pattern}"
+  - rollingFile:
+      file: ${log.file}
+      fileNamePattern: ${log.home}/${appName}.%d{yyyy-MM-dd}.%i.log.gz
+      maxFileSize: 10MB
+      maxHistory: 30
+      totalSizeCap: 2GB
+
+# This file is NOT automatically picked up by Logback; keep it for reference. Use logback-spring.xml for actual configuration.
