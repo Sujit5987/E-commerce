@@ -2,18 +2,30 @@ pipeline {
     agent any
     tools {
         maven 'maven-3.9'
-        jdk 'JDK-21'       // add this line
+        jdk 'JDK-21'
     }
     stages {
         stage('Build') {
             steps {
-                bat 'mvn clean install -X'   // -X gives verbose output
+                dir('user-api') {          // ← go into user-api folder first
+                    bat 'mvn clean install'
+                }
             }
         }
         stage('Test') {
             steps {
-                bat 'mvn test'
+                dir('user-api') {          // ← same here
+                    bat 'mvn test'
+                }
             }
+        }
+    }
+    post {
+        success {
+            echo 'Build successful!'
+        }
+        failure {
+            echo 'Build failed!'
         }
     }
 }
