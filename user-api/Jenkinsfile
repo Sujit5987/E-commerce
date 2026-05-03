@@ -5,16 +5,46 @@ pipeline {
         jdk 'JDK-21'
     }
     stages {
-        stage('Build') {
+        stage('User API - Build') {
             steps {
-                dir('user-api') {          // ← go into user-api folder first
-                    bat 'mvn clean install'
+                dir('user-api') {
+                    bat 'mvn clean install -DskipTests'
                 }
             }
         }
-        stage('Test') {
+        stage('User API - Test') {
             steps {
-                dir('user-api') {          // ← same here
+                dir('user-api') {
+                    bat 'mvn test'
+                }
+            }
+        }
+
+        stage('Brand Service - Build') {
+            steps {
+                dir('brand-service') {
+                    bat 'mvn clean install -DskipTests'
+                }
+            }
+        }
+        stage('Brand Service - Test') {
+            steps {
+                dir('brand-service') {
+                    bat 'mvn test'
+                }
+            }
+        }
+
+        stage('Product Service - Build') {
+            steps {
+                dir('product-service') {
+                    bat 'mvn clean install -DskipTests'
+                }
+            }
+        }
+        stage('Product Service - Test') {
+            steps {
+                dir('product-service') {
                     bat 'mvn test'
                 }
             }
@@ -22,7 +52,7 @@ pipeline {
     }
     post {
         success {
-            echo 'Build successful!'
+            echo 'All microservices built successfully!'
         }
         failure {
             echo 'Build failed!'
