@@ -20,42 +20,47 @@ pipeline {
             }
         }
 
-        stage('Brand Service - Build') {
-            steps {
-                dir('brand-service') {
-                    bat 'mvn clean install -DskipTests'
-                }
-            }
-        }
-        stage('Brand Service - Test') {
-            steps {
-                dir('brand-service') {
-                    bat 'mvn test'
-                }
-            }
-        }
+        // ─── Add new microservices below when ready ───
 
-        stage('Product Service - Build') {
+        // stage('Brand Service - Build') {
+        //     steps {
+        //         dir('brand-service') {
+        //             bat 'mvn clean install -DskipTests'
+        //         }
+        //     }
+        // }
+        // stage('Brand Service - Test') {
+        //     steps {
+        //         dir('brand-service') {
+        //             bat 'mvn test'
+        //         }
+        //     }
+        // }
+
+        // stage('Product Service - Build') {
+        //     steps {
+        //         dir('product-service') {
+        //             bat 'mvn clean install -DskipTests'
+        //         }
+        //     }
+        // }
+        // stage('Product Service - Test') {
+        //     steps {
+        //         dir('product-service') {
+        //             bat 'mvn test'
+        //         }
+        //     }
+        // }
+
+        stage('Git Info') {
             steps {
-                dir('product-service') {
-                    bat 'mvn clean install -DskipTests'
-                }
-            }
-        }
-        stage('Product Service - Test') {
-            steps {
-                dir('product-service') {
-                    bat 'mvn test'
-                }
+                bat 'git branch -a'     // shows all branches
+                bat 'git log --oneline -5'  // shows last 5 commits
             }
         }
     }
     post {
-        success {
-            echo 'All microservices built successfully!'
-        }
-        failure {
-            echo 'Build failed!'
-        }
+        success { echo 'Build successful!' }
+        failure { echo 'Build failed!' }
     }
 }
