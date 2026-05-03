@@ -1,3 +1,22 @@
-2026-02-19 00:55:41.952 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h38m22s670ms99µs300ns).
-2026-02-19 13:24:06.998 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12h28m29s617ms811µs600ns).
-2026-02-19 19:32:28.852 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h1m18s651ms555µs400ns).
+2026-04-13 22:43:12.630 [main] INFO  user_api.UserApiApplicationTests - Starting UserApiApplicationTests using Java 21 with PID 10036 (started by KIIT0001 in C:\Users\KIIT0001\mvn project\user-api)
+2026-04-13 22:43:12.637 [main] DEBUG user_api.UserApiApplicationTests - Running with Spring Boot v3.5.10, Spring v6.2.15
+2026-04-13 22:43:12.638 [main] INFO  user_api.UserApiApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-04-13 22:43:16.818 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-04-13 22:43:16.822 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2026-04-13 22:43:19.900 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface user_api.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2026-04-13 22:43:19.904 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 2214 ms. Found 0 JDBC repository interfaces.
+2026-04-13 22:43:21.575 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-04-13 22:43:21.577 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-13 22:43:33.427 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11058 ms. Found 1 JPA repository interface.
+2026-04-13 22:43:44.627 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=446b5403-0150-3b6f-8b5c-8e2b04b4e749
+2026-04-13 22:43:53.748 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-13 22:43:56.393 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@186481d4
+2026-04-13 22:43:56.398 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-04-13 22:44:01.376 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-13 22:44:01.912 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-13 22:44:05.668 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-13 22:44:08.513 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-13 22:44:17.556 [main] INFO  user_api.UserApiApplicationTests - Started UserApiApplicationTests in 65.649 seconds (process running for 67.475)
+2026-04-13 22:44:19.085 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-13 22:44:19.096 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-04-13 22:44:19.122 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
