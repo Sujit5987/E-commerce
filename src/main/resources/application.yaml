@@ -6,9 +6,9 @@ spring:
       - org.springframework.boot.autoconfigure.r2dbc.R2dbcAutoConfiguration
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/userdb
-    username: postgres
-    password: sujit
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/userdb}
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    password: ${SPRING_DATASOURCE_PASSWORD:sujit}
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -23,6 +23,7 @@ spring:
       mode: always
       platform: postgres
 
-
 server:
-  port: 8080
+  port: ${SERVER_PORT:8080}
+
+kind: Application
